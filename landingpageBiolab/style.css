@@ -1,0 +1,377 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E LIMPEZA
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Caixa invisível que limita a largura máxima do conteúdo de texto no centro */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   1. BARRA DE NAVEGAÇÃO (HEADER)
+   ========================================================================== */
+header {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.menu a {
+    color: #0f2c4a;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.menu .btn-contato {
+    background-color: #4d66ff;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   2. HERO SECTION (BANNER PRINCIPAL TOTALMENTE ESTICADO)
+   ========================================================================== */
+.hero {
+    width: 100%;       /* Faz a seção do banner ocupar toda a largura da tela */
+    padding: 0;        /* Remove qualquer espaço interno que criaria bordas brancas */
+    margin: 0;         /* Remove espaços por fora */
+    overflow: hidden;  /* Evita que a imagem crie barras de rolagem laterais */
+    display: block;    /* Garante o comportamento correto do bloco */
+}
+
+.hero-banner-img {
+    width: 100%;       /* Obriga a foto a se esticar de ponta a ponta na tela */
+    height: auto;      /* Mantém a proporção correta da imagem para não amassar */
+    display: block;    /* Remove um pequeno espacinho em branco que nasce embaixo de fotos */
+}
+
+/* ==========================================================================
+   3. SEÇÃO QUEM SOMOS (GRID DE MARCAS)
+   ========================================================================== */
+.quem-somos {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.quem-somos h2 {
+    font-size: 2.5rem;
+    color: #0f2c4a;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.quem-somos .destaque-azul {
+    color: #1d4363;
+}
+
+.quem-somos .intro {
+    font-size: 0.95rem;
+    color: #666666;
+    max-width: 1050px;
+    margin: 0 auto 50px auto;
+    text-align: justify;
+}
+
+/* Distribui os 6 cartões em 3 colunas perfeitas e alinhadas */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Estilo visual de cada cartão */
+.marca-card {
+    background: #ffffff;
+    border: 1px solid #eef2f5;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito suave de subida ao passar o mouse */
+.marca-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.marca-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.marca-info h4 {
+    font-size: 1.1rem;
+    color: #1d4363;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.marca-info p {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   4. SOBRE / MÉTRICAS
+   ========================================================================== */
+.sobre-metricas {
+    padding: 60px 0;
+    background-color: #f8fafc;
+}
+
+.section-title-center {
+    color: #0f2c4a;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Grade para as 4 caixas de números ficarem lado a lado */
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.metrica-item {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.metrica-texto h3 {
+    font-size: 26px;
+    color: #0f2c4a;
+    margin-bottom: 5px;
+}
+
+.metrica-texto p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ==========================================================================
+   5. ÚLTIMAS NOTÍCIAS
+   ========================================================================== */
+.noticias {
+    padding: 60px 0;
+}
+
+.noticias-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.noticias-img img, 
+.noticias-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   6. DEPOIMENTOS
+   ========================================================================== */
+.depoimentos {
+    background-color: #f8fafc;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    color: #0f2c4a;
+    margin-bottom: 30px;
+}
+
+.depoimentos-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   7. CONTATO E FORMULÁRIO
+   ========================================================================== */
+.contato {
+    padding: 60px 0;
+}
+
+.contato-box {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contato-info h2 {
+    color: #0f2c4a;
+}
+
+.contato-info p {
+    margin-top: 15px;
+    color: #666;
+}
+
+.contato-canais {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.contato-canais p {
+    margin-bottom: 10px;
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-grupo label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-grupo input, 
+.form-grupo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.btn-enviar {
+    background-color: #0f2c4a;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   8. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #0f2c4a;
+    color: white;
+    padding: 60px 0 30px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 22px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4d66ff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-col p {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   9. ADAPTAÇÃO PARA CELULARES E TABLETS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .metricas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* No celular tudo se empilha automaticamente em uma coluna só */
+    .cards-grid,
+    .metricas-grid,
+    .noticias-container,
+    .contato-box,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .quem-somos h2 {
+        font-size: 2rem;
+    }
+}
